@@ -1,0 +1,53 @@
+# Dashboard YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/dashboards
+# This file was generated using AI.
+
+type: metrics_view
+title: Metrics for Rolling Test Table
+table: rolling_test
+timeseries: Date
+dimensions:
+  - label: Country
+    column: Country
+    description: ""
+measures:
+  - name: total_cost
+    label: Total Cost
+    expression: SUM(cost)
+  - name: total_cost_7day_rolling_avg
+    label: Rolling 7-day Avg
+    expression: AVG(total_cost)
+    requires: [total_cost]
+    window:
+      order: Date
+      frame: RANGE BETWEEN INTERVAL 7 DAYS PRECEDING AND CURRENT ROW
+available_time_zones:
+  - America/Los_Angeles
+  - America/Chicago
+  - America/New_York
+  - Europe/London
+  - Europe/Paris
+  - Asia/Jerusalem
+  - Europe/Moscow
+  - Asia/Kolkata
+  - Asia/Shanghai
+  - Asia/Tokyo
+  - Australia/Sydney
+available_time_ranges:
+  - PT6H
+  - PT24H
+  - P7D
+  - P14D
+  - P4W
+  - P3M
+  - P12M
+  - rill-TD
+  - rill-WTD
+  - rill-MTD
+  - rill-QTD
+  - rill-YTD
+  - rill-PDC
+  - rill-PWC
+  - rill-PMC
+  - rill-PQC
+  - rill-PYC

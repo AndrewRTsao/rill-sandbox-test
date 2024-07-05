@@ -1,0 +1,10 @@
+stage_pay,game_id,amount
+Membership,1,100
+In-game Purchase,1,150
+Membership,2,200
+In-game Purchase,2,100
+Advertisement,3,300
+In-game Purchase,3,200
+Membership,1,50
+Advertisement,2,150
+In-game Purchase,3,100
